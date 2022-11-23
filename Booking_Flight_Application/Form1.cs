@@ -23,6 +23,8 @@ namespace Booking_Flight_Application
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bookingFlightDataSet.Flights' table. You can move, or remove it, as needed.
+            this.flightsTableAdapter.Fill(this.bookingFlightDataSet.Flights);
 
         }
 
