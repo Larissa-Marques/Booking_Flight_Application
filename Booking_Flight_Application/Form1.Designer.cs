@@ -38,6 +38,15 @@
             this.comboBox_departure = new System.Windows.Forms.ComboBox();
             this.comboBox_destination = new System.Windows.Forms.ComboBox();
             this.dataGridView_flights = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bookingFlightDataSet = new Booking_Flight_Application.BookingFlightDataSet();
             this.lbl_departing_flights = new System.Windows.Forms.Label();
             this.btn_search = new System.Windows.Forms.Button();
             this.dateTimePicker_start_date = new System.Windows.Forms.DateTimePicker();
@@ -49,20 +58,11 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_class = new System.Windows.Forms.Label();
-            this.bookingFlightDataSet = new Booking_Flight_Application.BookingFlightDataSet();
-            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flightsTableAdapter = new Booking_Flight_Application.BookingFlightDataSetTableAdapters.FlightsTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.airlineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.airlineIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_flights)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_trip
@@ -180,6 +180,72 @@
             this.dataGridView_flights.Size = new System.Drawing.Size(920, 185);
             this.dataGridView_flights.TabIndex = 7;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // airlineDataGridViewTextBoxColumn
+            // 
+            this.airlineDataGridViewTextBoxColumn.DataPropertyName = "Airline";
+            this.airlineDataGridViewTextBoxColumn.HeaderText = "Airline";
+            this.airlineDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.airlineDataGridViewTextBoxColumn.Name = "airlineDataGridViewTextBoxColumn";
+            this.airlineDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dateTimeDataGridViewTextBoxColumn
+            // 
+            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "Date & Time";
+            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date & Time";
+            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // airlineIDDataGridViewTextBoxColumn
+            // 
+            this.airlineIDDataGridViewTextBoxColumn.DataPropertyName = "Airline ID";
+            this.airlineIDDataGridViewTextBoxColumn.HeaderText = "Airline ID";
+            this.airlineIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.airlineIDDataGridViewTextBoxColumn.Name = "airlineIDDataGridViewTextBoxColumn";
+            this.airlineIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departureDataGridViewTextBoxColumn
+            // 
+            this.departureDataGridViewTextBoxColumn.DataPropertyName = "Departure";
+            this.departureDataGridViewTextBoxColumn.HeaderText = "Departure";
+            this.departureDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureDataGridViewTextBoxColumn.Name = "departureDataGridViewTextBoxColumn";
+            this.departureDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // destinationDataGridViewTextBoxColumn
+            // 
+            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
+            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
+            this.destinationDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            this.destinationDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // flightsBindingSource
+            // 
+            this.flightsBindingSource.DataMember = "Flights";
+            this.flightsBindingSource.DataSource = this.bookingFlightDataSet;
+            // 
+            // bookingFlightDataSet
+            // 
+            this.bookingFlightDataSet.DataSetName = "BookingFlightDataSet";
+            this.bookingFlightDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lbl_departing_flights
             // 
             this.lbl_departing_flights.AutoSize = true;
@@ -203,6 +269,7 @@
             this.btn_search.TabIndex = 9;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // dateTimePicker_start_date
             // 
@@ -304,75 +371,9 @@
             this.lbl_class.TabIndex = 18;
             this.lbl_class.Text = "Flight Class";
             // 
-            // bookingFlightDataSet
-            // 
-            this.bookingFlightDataSet.DataSetName = "BookingFlightDataSet";
-            this.bookingFlightDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // flightsBindingSource
-            // 
-            this.flightsBindingSource.DataMember = "Flights";
-            this.flightsBindingSource.DataSource = this.bookingFlightDataSet;
-            // 
             // flightsTableAdapter
             // 
             this.flightsTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // airlineDataGridViewTextBoxColumn
-            // 
-            this.airlineDataGridViewTextBoxColumn.DataPropertyName = "Airline";
-            this.airlineDataGridViewTextBoxColumn.HeaderText = "Airline";
-            this.airlineDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.airlineDataGridViewTextBoxColumn.Name = "airlineDataGridViewTextBoxColumn";
-            this.airlineDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dateTimeDataGridViewTextBoxColumn
-            // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "Date & Time";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "Date & Time";
-            this.dateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
-            this.dateTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // airlineIDDataGridViewTextBoxColumn
-            // 
-            this.airlineIDDataGridViewTextBoxColumn.DataPropertyName = "Airline ID";
-            this.airlineIDDataGridViewTextBoxColumn.HeaderText = "Airline ID";
-            this.airlineIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.airlineIDDataGridViewTextBoxColumn.Name = "airlineIDDataGridViewTextBoxColumn";
-            this.airlineIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // departureDataGridViewTextBoxColumn
-            // 
-            this.departureDataGridViewTextBoxColumn.DataPropertyName = "Departure";
-            this.departureDataGridViewTextBoxColumn.HeaderText = "Departure";
-            this.departureDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.departureDataGridViewTextBoxColumn.Name = "departureDataGridViewTextBoxColumn";
-            this.departureDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // destinationDataGridViewTextBoxColumn
-            // 
-            this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
-            this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
-            this.destinationDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
-            this.destinationDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // Form1
             // 
@@ -404,9 +405,9 @@
             this.Text = "Booking Flight System";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_flights)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,5 +32,66 @@ namespace Booking_Flight_Application
         {
             this.Close();
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            var trip = comboBox_trip.SelectedItem != null ? comboBox_trip.SelectedItem.ToString() : "";
+            var flightClass = comboBox_economy.SelectedItem != null ? comboBox_economy.SelectedItem.ToString() : "";
+            var departure = comboBox_departure.SelectedItem != null ? comboBox_departure.SelectedItem.ToString() : "";
+            var destination = comboBox_destination.SelectedItem != null ? comboBox_destination.SelectedItem.ToString() : "";
+
+            var startDate = dateTimePicker_start_date.Value.ToString();
+            var endDate = dateTimePicker_end_date.Value.ToString();
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView_flights.DataSource;
+            string filter = "";
+
+            // Check if text fields are not null before adding to filter. 
+            if (!string.IsNullOrEmpty(trip))
+            {
+                //Logic for trip
+            }
+            if (!string.IsNullOrEmpty(flightClass))
+            {
+                //Median Price of Flight
+                var filterPrice = 250;
+                if (flightClass == "First")
+                {
+                    if (filter.Length > 0) filter += "AND ";
+                    filter += "Price >= '" + filterPrice + "' ";
+                }
+                else if (flightClass == "Economy")
+                {
+                    if (filter.Length > 0) filter += "AND ";
+                    filter += "Price < '" + filterPrice + "' ";
+
+                }
+
+
+            }
+            if (!string.IsNullOrEmpty(departure))
+            {
+                if (filter.Length > 0) filter += "AND ";
+                filter += "Departure = '" + departure.Substring(departure.Length - 4, 3) + "'";
+            }
+
+            if (!string.IsNullOrEmpty(destination))
+            {
+                if (filter.Length > 0) filter += "AND ";
+                filter += "Destination = '" + destination.Substring(destination.Length - 4, 3) + "'";
+            }
+
+            /*
+            if (!string.IsNullOrEmpty(startDate) && !string.IsNullOrEmpty(endDate))
+            {
+                var columnName = "Date & Time";
+                if (filter.Length > 0) filter += "AND ";
+                filter += columnName + "Between '%" + startDate + "%' AND '%" + endDate + "%'";
+            }*/
+
+            bs.Filter = filter;
+            dataGridView_flights.DataSource = bs;
+        }
     }
 }
