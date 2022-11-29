@@ -43,10 +43,7 @@ namespace Booking_Flight_Application
             var startDate = dateTimePicker_start_date.Value.ToString();
             var endDate = dateTimePicker_end_date.Value.ToString();
 
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dataGridView_flights.DataSource;
             string filter = "";
-
             // Check if text fields are not null before adding to filter. 
             if (!string.IsNullOrEmpty(trip))
             {
@@ -90,6 +87,8 @@ namespace Booking_Flight_Application
                 filter += columnName + "Between '%" + startDate + "%' AND '%" + endDate + "%'";
             }*/
 
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView_flights.DataSource;
             bs.Filter = filter;
             dataGridView_flights.DataSource = bs;
         }
