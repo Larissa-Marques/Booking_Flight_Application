@@ -59,6 +59,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_class = new System.Windows.Forms.Label();
             this.flightsTableAdapter = new Booking_Flight_Application.BookingFlightDataSetTableAdapters.FlightsTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_flights)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).BeginInit();
@@ -375,12 +376,22 @@
             // 
             this.flightsTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(796, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "First class is above $250";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(977, 569);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_class);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_close);
@@ -444,6 +455,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }
 
