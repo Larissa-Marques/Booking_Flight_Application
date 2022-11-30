@@ -303,6 +303,7 @@
             this.btn_book.TabIndex = 12;
             this.btn_book.Text = "Book Flight";
             this.btn_book.UseVisualStyleBackColor = false;
+            this.btn_book.Click += new System.EventHandler(this.btn_book_Click);
             // 
             // lbl_end_date
             // 
@@ -379,7 +380,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(796, 9);
+            this.label1.Location = new System.Drawing.Point(785, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 16);
             this.label1.TabIndex = 19;

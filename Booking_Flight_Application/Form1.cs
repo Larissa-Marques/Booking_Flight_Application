@@ -92,5 +92,27 @@ namespace Booking_Flight_Application
             bs.Filter = filter;
             dataGridView_flights.DataSource = bs;
         }
+
+        private void btn_book_Click(object sender, EventArgs e)
+        {
+            String id = dataGridView_flights.CurrentRow.Cells[0].Value.ToString();
+            String airline = dataGridView_flights.CurrentRow.Cells[1].Value.ToString();
+            String date = dataGridView_flights.CurrentRow.Cells[2].Value.ToString();
+            String airline_id = dataGridView_flights.CurrentRow.Cells[3].Value.ToString();
+            String departure = dataGridView_flights.CurrentRow.Cells[4].Value.ToString();
+            String destination = dataGridView_flights.CurrentRow.Cells[5].Value.ToString();
+            String price = dataGridView_flights.CurrentRow.Cells[6].Value.ToString();
+            // TODO: needs to add the rest of the information to the message
+
+            String message = "This is a confirmation that your flight has been booked. \n" +
+                "Your itinerary is: \n\n" +
+                " Airline: " + airline + "\n" +
+                " Date: " + date + "\n" +
+                " Airline ID: " + airline_id + "\n" +
+                " Departure: " + departure + " to " + destination + "\n" +
+                " Price: $" + price;
+
+            MessageBox.Show(message);
+        }
     }
 }
