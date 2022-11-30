@@ -35,20 +35,13 @@ namespace Booking_Flight_Application
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            var trip = comboBox_trip.SelectedItem != null ? comboBox_trip.SelectedItem.ToString() : "";
             var flightClass = comboBox_economy.SelectedItem != null ? comboBox_economy.SelectedItem.ToString() : "";
             var departure = comboBox_departure.SelectedItem != null ? comboBox_departure.SelectedItem.ToString() : "";
             var destination = comboBox_destination.SelectedItem != null ? comboBox_destination.SelectedItem.ToString() : "";
 
             var startDate = dateTimePicker_start_date.Value.ToString();
-            var endDate = dateTimePicker_end_date.Value.ToString();
 
             string filter = "";
-            // Check if text fields are not null before adding to filter. 
-            if (!string.IsNullOrEmpty(trip))
-            {
-                //Logic for trip
-            }
             if (!string.IsNullOrEmpty(flightClass))
             {
                 //Median Price of Flight
@@ -95,7 +88,6 @@ namespace Booking_Flight_Application
 
         private void btn_book_Click(object sender, EventArgs e)
         {
-            String id = dataGridView_flights.CurrentRow.Cells[0].Value.ToString();
             String airline = dataGridView_flights.CurrentRow.Cells[1].Value.ToString();
             String date = dataGridView_flights.CurrentRow.Cells[2].Value.ToString();
             String airline_id = dataGridView_flights.CurrentRow.Cells[3].Value.ToString();
@@ -113,6 +105,11 @@ namespace Booking_Flight_Application
                 " Price: $" + price;
 
             MessageBox.Show(message);
+        }
+
+        private void btn_things_to_do_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

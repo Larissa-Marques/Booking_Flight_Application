@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lbl_trip = new System.Windows.Forms.Label();
-            this.comboBox_trip = new System.Windows.Forms.ComboBox();
             this.comboBox_economy = new System.Windows.Forms.ComboBox();
             this.lbl_departure = new System.Windows.Forms.Label();
             this.lbl_destination = new System.Windows.Forms.Label();
@@ -52,8 +50,6 @@
             this.dateTimePicker_start_date = new System.Windows.Forms.DateTimePicker();
             this.lbl_start_date = new System.Windows.Forms.Label();
             this.btn_book = new System.Windows.Forms.Button();
-            this.lbl_end_date = new System.Windows.Forms.Label();
-            this.dateTimePicker_end_date = new System.Windows.Forms.DateTimePicker();
             this.btn_things_to_do = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,32 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bookingFlightDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbl_trip
-            // 
-            this.lbl_trip.AutoSize = true;
-            this.lbl_trip.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_trip.Location = new System.Drawing.Point(24, 33);
-            this.lbl_trip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_trip.Name = "lbl_trip";
-            this.lbl_trip.Size = new System.Drawing.Size(50, 22);
-            this.lbl_trip.TabIndex = 0;
-            this.lbl_trip.Text = "Trip";
-            // 
-            // comboBox_trip
-            // 
-            this.comboBox_trip.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_trip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_trip.FormattingEnabled = true;
-            this.comboBox_trip.Items.AddRange(new object[] {
-            "One way",
-            "Round trip"});
-            this.comboBox_trip.Location = new System.Drawing.Point(131, 33);
-            this.comboBox_trip.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox_trip.Name = "comboBox_trip";
-            this.comboBox_trip.Size = new System.Drawing.Size(160, 24);
-            this.comboBox_trip.TabIndex = 1;
-            this.comboBox_trip.UseWaitCursor = true;
             // 
             // comboBox_economy
             // 
@@ -120,7 +90,7 @@
             // 
             this.lbl_destination.AutoSize = true;
             this.lbl_destination.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_destination.Location = new System.Drawing.Point(658, 85);
+            this.lbl_destination.Location = new System.Drawing.Point(24, 31);
             this.lbl_destination.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_destination.Name = "lbl_destination";
             this.lbl_destination.Size = new System.Drawing.Size(111, 22);
@@ -138,7 +108,7 @@
             "New York (JFK)",
             "Miami (MIA)",
             "Chicago (ORD)"});
-            this.comboBox_departure.Location = new System.Drawing.Point(131, 84);
+            this.comboBox_departure.Location = new System.Drawing.Point(158, 87);
             this.comboBox_departure.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_departure.Name = "comboBox_departure";
             this.comboBox_departure.Size = new System.Drawing.Size(160, 24);
@@ -155,7 +125,7 @@
             "New York (JFK)",
             "Miami (MIA)",
             "Chicago (ORD)"});
-            this.comboBox_destination.Location = new System.Drawing.Point(788, 84);
+            this.comboBox_destination.Location = new System.Drawing.Point(158, 36);
             this.comboBox_destination.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_destination.Name = "comboBox_destination";
             this.comboBox_destination.Size = new System.Drawing.Size(160, 24);
@@ -274,7 +244,7 @@
             // 
             // dateTimePicker_start_date
             // 
-            this.dateTimePicker_start_date.Location = new System.Drawing.Point(131, 143);
+            this.dateTimePicker_start_date.Location = new System.Drawing.Point(158, 145);
             this.dateTimePicker_start_date.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker_start_date.Name = "dateTimePicker_start_date";
             this.dateTimePicker_start_date.Size = new System.Drawing.Size(265, 22);
@@ -284,12 +254,12 @@
             // 
             this.lbl_start_date.AutoSize = true;
             this.lbl_start_date.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_start_date.Location = new System.Drawing.Point(24, 149);
+            this.lbl_start_date.Location = new System.Drawing.Point(24, 140);
             this.lbl_start_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_start_date.Name = "lbl_start_date";
-            this.lbl_start_date.Size = new System.Drawing.Size(101, 22);
+            this.lbl_start_date.Size = new System.Drawing.Size(52, 22);
             this.lbl_start_date.TabIndex = 11;
-            this.lbl_start_date.Text = "Start Date";
+            this.lbl_start_date.Text = "Date";
             // 
             // btn_book
             // 
@@ -305,25 +275,6 @@
             this.btn_book.UseVisualStyleBackColor = false;
             this.btn_book.Click += new System.EventHandler(this.btn_book_Click);
             // 
-            // lbl_end_date
-            // 
-            this.lbl_end_date.AutoSize = true;
-            this.lbl_end_date.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_end_date.Location = new System.Drawing.Point(24, 185);
-            this.lbl_end_date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_end_date.Name = "lbl_end_date";
-            this.lbl_end_date.Size = new System.Drawing.Size(93, 22);
-            this.lbl_end_date.TabIndex = 13;
-            this.lbl_end_date.Text = "End Date";
-            // 
-            // dateTimePicker_end_date
-            // 
-            this.dateTimePicker_end_date.Location = new System.Drawing.Point(131, 185);
-            this.dateTimePicker_end_date.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker_end_date.Name = "dateTimePicker_end_date";
-            this.dateTimePicker_end_date.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker_end_date.TabIndex = 14;
-            // 
             // btn_things_to_do
             // 
             this.btn_things_to_do.BackColor = System.Drawing.SystemColors.Desktop;
@@ -336,6 +287,7 @@
             this.btn_things_to_do.TabIndex = 15;
             this.btn_things_to_do.Text = "Things to do";
             this.btn_things_to_do.UseVisualStyleBackColor = false;
+            this.btn_things_to_do.Click += new System.EventHandler(this.btn_things_to_do_Click);
             // 
             // btn_close
             // 
@@ -397,8 +349,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_things_to_do);
-            this.Controls.Add(this.dateTimePicker_end_date);
-            this.Controls.Add(this.lbl_end_date);
             this.Controls.Add(this.btn_book);
             this.Controls.Add(this.lbl_start_date);
             this.Controls.Add(this.dateTimePicker_start_date);
@@ -410,8 +360,6 @@
             this.Controls.Add(this.lbl_destination);
             this.Controls.Add(this.lbl_departure);
             this.Controls.Add(this.comboBox_economy);
-            this.Controls.Add(this.comboBox_trip);
-            this.Controls.Add(this.lbl_trip);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Booking Flight System";
@@ -426,9 +374,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbl_trip;
-        private System.Windows.Forms.ComboBox comboBox_trip;
         private System.Windows.Forms.ComboBox comboBox_economy;
         private System.Windows.Forms.Label lbl_departure;
         private System.Windows.Forms.Label lbl_destination;
@@ -440,8 +385,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker_start_date;
         private System.Windows.Forms.Label lbl_start_date;
         private System.Windows.Forms.Button btn_book;
-        private System.Windows.Forms.Label lbl_end_date;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_end_date;
         private System.Windows.Forms.Button btn_things_to_do;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.PictureBox pictureBox1;
