@@ -107,9 +107,31 @@ namespace Booking_Flight_Application
             MessageBox.Show(message);
         }
 
+        // Things to do in each destination
+        String[] msp_ttd = { "Mall of America", "Duluth", "Twin Cities" };
+        String[] mia_ttd = { "Everglades", "Key West","Vizcaya Museum" };
+        String[] lax_ttd = { "Hollywood Walk of Fame", "Santa Monica Pier", "Malibu Beach" };
+        String[] jfk_ttd = { "NY Times Square", "Apollo Theater", "Empire State Building" };
+        String[] ord_ttd = { "Cloud Gate", "Millennium Park", "Navy Pier" };
+
         private void btn_things_to_do_Click(object sender, EventArgs e)
         {
+            String destination = dataGridView_flights.CurrentRow.Cells[5].Value.ToString();
+            String message = "Welcome to " + destination + "!\n" + "Don't forget to visit ";
 
+            if (destination == "MSP") message = message + rand_item_array(msp_ttd);
+            else if (destination == "MIA") message = message + rand_item_array(mia_ttd);
+            else if (destination == "LAX") message = message + rand_item_array(lax_ttd);
+            else if (destination == "JFK") message = message + rand_item_array(jfk_ttd);
+            else if (destination == "ORD") message = message + rand_item_array(ord_ttd);
+
+            MessageBox.Show(message);
+        }
+
+        private String rand_item_array(String[] arr) 
+        {
+            int index = new Random().Next(0, arr.Length);
+            return arr[index];
         }
     }
 }
