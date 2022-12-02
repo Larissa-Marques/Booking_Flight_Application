@@ -1,6 +1,6 @@
 ﻿// Booking_Flight application purpose is to allow people to search certain destinations 
 // (Minneapolis, Los Angeles, New York, Chicago and Miami), select a date and choose the 
-// best airline option to book their flight.
+// best airline option to book their flight as well as figure out which attraction to visit.
 
 using System;
 using System.Collections.Generic;
@@ -23,13 +23,13 @@ namespace Booking_Flight_Application
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bookingFlightDataSet.Flights' table. You can move, or remove it, as needed.
             this.flightsTableAdapter.Fill(this.bookingFlightDataSet.Flights);
 
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            // When this button is clicked, it will close the application.
             this.Close();
         }
 
@@ -58,8 +58,6 @@ namespace Booking_Flight_Application
                     filter += "Price < '" + filterPrice + "' ";
 
                 }
-
-
             }
             if (!string.IsNullOrEmpty(departure))
             {
@@ -85,23 +83,28 @@ namespace Booking_Flight_Application
 
         private void btn_book_Click(object sender, EventArgs e)
         {
-            String airline = dataGridView_flights.CurrentRow.Cells[1].Value.ToString();
-            String date = dataGridView_flights.CurrentRow.Cells[2].Value.ToString();
-            String airline_id = dataGridView_flights.CurrentRow.Cells[3].Value.ToString();
-            String departure = dataGridView_flights.CurrentRow.Cells[4].Value.ToString();
-            String destination = dataGridView_flights.CurrentRow.Cells[5].Value.ToString();
-            String price = dataGridView_flights.CurrentRow.Cells[6].Value.ToString();
-            // TODO: needs to add the rest of the information to the message
+            try
+            {
+                String airline = dataGridView_flights.CurrentRow.Cells[1].Value.ToString();
+                String date = dataGridView_flights.CurrentRow.Cells[2].Value.ToString();
+                String airline_id = dataGridView_flights.CurrentRow.Cells[3].Value.ToString();
+                String departure = dataGridView_flights.CurrentRow.Cells[4].Value.ToString();
+                String destination = dataGridView_flights.CurrentRow.Cells[5].Value.ToString();
+                String price = dataGridView_flights.CurrentRow.Cells[6].Value.ToString();
 
-            String message = "This is a confirmation that your flight has been booked. \n" +
-                "Your itinerary is: \n\n" +
-                " Airline: " + airline + "\n" +
-                " Date: " + date + "\n" +
-                " Airline ID: " + airline_id + "\n" +
-                " Departure: " + departure + " to " + destination + "\n" +
-                " Price: $" + price;
+                String message = "This is a confirmation that your flight has been booked. \n" +
+                    "Your itinerary is: \n\n" +
+                    " Airline: " + airline + "\n" +
+                    " Date: " + date + "\n" +
+                    " Airline ID: " + airline_id + "\n" +
+                    " Departure: " + departure + " to " + destination + "\n" +
+                    " Price: $" + price;
 
-            MessageBox.Show(message);
+                MessageBox.Show(message);
+            } catch(Exception error)
+            {
+                MessageBox.Show("Error: " + error.Message + " > Maybe you did not select a flight to book");
+            }
         }
 
         // Things to do in each destination
