@@ -38,8 +38,9 @@ namespace Booking_Flight_Application
             var flightClass = comboBox_economy.SelectedItem != null ? comboBox_economy.SelectedItem.ToString() : "";
             var departure = comboBox_departure.SelectedItem != null ? comboBox_departure.SelectedItem.ToString() : "";
             var destination = comboBox_destination.SelectedItem != null ? comboBox_destination.SelectedItem.ToString() : "";
-
-            var startDate = dateTimePicker_start_date.Value.ToString();
+             
+            string date_time = dateTimePicker_start_date.Value.ToString();
+            string date = date_time.Substring(0, 10);
 
             string filter = "";
             if (!string.IsNullOrEmpty(flightClass))
@@ -65,20 +66,16 @@ namespace Booking_Flight_Application
                 if (filter.Length > 0) filter += "AND ";
                 filter += "Departure = '" + departure.Substring(departure.Length - 4, 3) + "'";
             }
-
             if (!string.IsNullOrEmpty(destination))
             {
                 if (filter.Length > 0) filter += "AND ";
                 filter += "Destination = '" + destination.Substring(destination.Length - 4, 3) + "'";
             }
-
-            /*
-            if (!string.IsNullOrEmpty(startDate) && !string.IsNullOrEmpty(endDate))
+            if (!string.IsNullOrEmpty(date))
             {
-                var columnName = "Date & Time";
                 if (filter.Length > 0) filter += "AND ";
-                filter += columnName + "Between '%" + startDate + "%' AND '%" + endDate + "%'";
-            }*/
+                filter += "[Date & Time] = '" + date + "'";
+            }
 
             BindingSource bs = new BindingSource();
             bs.DataSource = dataGridView_flights.DataSource;
